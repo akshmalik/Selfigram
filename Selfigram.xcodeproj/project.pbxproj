@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C205538F1F45435800853331 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205538E1F45435800853331 /* User.swift */; };
+		C20553911F45438300853331 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20553901F45438300853331 /* Post.swift */; };
 		C2BE8B091F4291930043A95A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8B081F4291930043A95A /* ProfileViewController.swift */; };
 		C2D1B0901F3BFD04003AE1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1B08F1F3BFD04003AE1FA /* AppDelegate.swift */; };
 		C2D1B0921F3BFD04003AE1FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D1B0911F3BFD04003AE1FA /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C205538E1F45435800853331 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C20553901F45438300853331 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C2BE8B081F4291930043A95A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C2D1B08C1F3BFD04003AE1FA /* Selfigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D1B08F1F3BFD04003AE1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				C2D1B0961F3BFD04003AE1FA /* Assets.xcassets */,
 				C2D1B0981F3BFD04003AE1FA /* LaunchScreen.storyboard */,
 				C2D1B09B1F3BFD04003AE1FA /* Info.plist */,
+				C205538E1F45435800853331 /* User.swift */,
+				C20553901F45438300853331 /* Post.swift */,
 			);
 			path = Selfigram;
 			sourceTree = "<group>";
@@ -262,9 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C205538F1F45435800853331 /* User.swift in Sources */,
 				C2BE8B091F4291930043A95A /* ProfileViewController.swift in Sources */,
 				C2D1B0921F3BFD04003AE1FA /* ViewController.swift in Sources */,
 				C2D1B0901F3BFD04003AE1FA /* AppDelegate.swift in Sources */,
+				C20553911F45438300853331 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

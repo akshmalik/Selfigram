@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,18 +43,52 @@
         <scene sceneID="mOU-wi-uAZ">
             <objects>
                 <tableViewController id="p78-ZW-6a9" customClass="FeedViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aWJ-ZZ-1ZS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="28" sectionFooterHeight="28" id="aWJ-ZZ-1ZS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" id="gvF-IY-VLM">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="gvF-IY-VLM" customClass="SelfieCell" customModule="Selfigram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gvF-IY-VLM" id="Dd2-ia-uWP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N5K-7a-AVg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="lS6-i4-f74"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAV-h1-8EC">
+                                            <rect key="frame" x="8" y="258" width="79" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-mI-aS1">
+                                            <rect key="frame" x="8" y="287" width="75" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="N5K-7a-AVg" secondAttribute="trailing" id="MdK-Yp-FVg"/>
+                                        <constraint firstItem="TAV-h1-8EC" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leadingMargin" id="Y5x-0t-QR4"/>
+                                        <constraint firstItem="oRY-mI-aS1" firstAttribute="top" secondItem="TAV-h1-8EC" secondAttribute="bottom" constant="8" id="d9j-ZK-NsD"/>
+                                        <constraint firstItem="N5K-7a-AVg" firstAttribute="top" secondItem="Dd2-ia-uWP" secondAttribute="top" id="fLw-Pa-Zi3"/>
+                                        <constraint firstItem="TAV-h1-8EC" firstAttribute="top" secondItem="N5K-7a-AVg" secondAttribute="bottom" constant="8" id="ilP-lT-0Rp"/>
+                                        <constraint firstItem="N5K-7a-AVg" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leading" id="uIp-oD-yvD"/>
+                                        <constraint firstItem="oRY-mI-aS1" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leadingMargin" id="y47-tT-nSA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="oRY-mI-aS1" id="Wwm-O8-ret"/>
+                                    <outlet property="selfieImageView" destination="N5K-7a-AVg" id="444-1m-7hn"/>
+                                    <outlet property="usernameLabel" destination="TAV-h1-8EC" id="zb5-I7-8f4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -61,11 +96,18 @@
                             <outlet property="delegate" destination="p78-ZW-6a9" id="PYU-gD-FUe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="J3m-zL-gnn"/>
+                    <navigationItem key="navigationItem" id="J3m-zL-gnn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="a00-c4-OhN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="p78-ZW-6a9" id="GvT-m4-MLa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvF-48-RGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="-301.79910044977515"/>
+            <point key="canvasLocation" x="979.71014492753636" y="-302.44565217391306"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BFz-4O-Mph">

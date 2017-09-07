@@ -73,12 +73,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-4t-tQ4">
+                                            <rect key="frame" x="387" y="258" width="23" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="9mC-gM-huO"/>
+                                                <constraint firstAttribute="width" constant="23" id="fZJ-fT-wbA"/>
+                                            </constraints>
+                                            <state key="normal" image="hearts-off"/>
+                                            <state key="selected" image="hearts-on"/>
+                                            <connections>
+                                                <action selector="likeButtonClicked:" destination="gvF-IY-VLM" eventType="touchUpInside" id="v9A-7t-hfS"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="yTj-4t-tQ4" firstAttribute="trailing" secondItem="Dd2-ia-uWP" secondAttribute="trailingMargin" constant="4" id="FV0-Wp-mN8"/>
                                         <constraint firstAttribute="trailing" secondItem="N5K-7a-AVg" secondAttribute="trailing" id="MdK-Yp-FVg"/>
                                         <constraint firstItem="TAV-h1-8EC" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leadingMargin" id="Y5x-0t-QR4"/>
                                         <constraint firstItem="oRY-mI-aS1" firstAttribute="top" secondItem="TAV-h1-8EC" secondAttribute="bottom" constant="8" id="d9j-ZK-NsD"/>
                                         <constraint firstItem="N5K-7a-AVg" firstAttribute="top" secondItem="Dd2-ia-uWP" secondAttribute="top" id="fLw-Pa-Zi3"/>
+                                        <constraint firstItem="yTj-4t-tQ4" firstAttribute="top" secondItem="N5K-7a-AVg" secondAttribute="bottom" constant="8" id="ih6-c2-cMN"/>
                                         <constraint firstItem="TAV-h1-8EC" firstAttribute="top" secondItem="N5K-7a-AVg" secondAttribute="bottom" constant="8" id="ilP-lT-0Rp"/>
                                         <constraint firstItem="N5K-7a-AVg" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leading" id="uIp-oD-yvD"/>
                                         <constraint firstItem="oRY-mI-aS1" firstAttribute="leading" secondItem="Dd2-ia-uWP" secondAttribute="leadingMargin" id="y47-tT-nSA"/>
@@ -86,6 +100,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="oRY-mI-aS1" id="Wwm-O8-ret"/>
+                                    <outlet property="likeButton" destination="yTj-4t-tQ4" id="Knn-ac-A7m"/>
                                     <outlet property="selfieImageView" destination="N5K-7a-AVg" id="444-1m-7hn"/>
                                     <outlet property="usernameLabel" destination="TAV-h1-8EC" id="zb5-I7-8f4"/>
                                 </connections>
@@ -252,6 +267,8 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
+        <image name="hearts-on" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>
